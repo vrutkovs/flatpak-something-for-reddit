@@ -1,0 +1,40 @@
+{
+    "app-id": "com.github.samdroid_apps.something_for_reddit",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.20",
+    "sdk": "org.gnome.Sdk",
+    "command": "reddit-is-gtk",
+    "tags": ["nightly"],
+    "rename-desktop-file": "reddit-is-gtk.desktop",
+    "desktop-file-name-prefix": "(Nightly) ",
+    "finish-args": [
+        /* X11 + XShm access */
+        "--share=ipc", "--socket=x11",
+        /* Wayland access */
+        "--socket=wayland",
+        /* Needs to talk to the network: */
+        "--share=network"
+    ],
+    "build-options" : {
+        "cflags": "-O2 -g",
+        "cxxflags": "-O2 -g",
+        "env": {
+            "V": "1"
+        }
+    },
+    "cleanup": ["/include", "/lib/pkgconfig",
+                "/share/pkgconfig", "/share/aclocal",
+                "/man", "/share/man", "/share/gtk-doc",
+                "*.la", "*.a"],
+    "modules": [
+      {
+          "name": "something-for-reddit",
+          "sources": [
+              {
+                  "type": "git",
+                  "url": "https://github.com/samdroid-apps/something-for-reddit"
+              }
+          ]
+      }
+    ]
+}
