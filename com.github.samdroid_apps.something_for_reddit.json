@@ -19,8 +19,13 @@
         "cflags": "-O2 -g",
         "cxxflags": "-O2 -g",
         "env": {
-            "V": "1"
-        }
+            "V": "1",
+            "GEM_PATH": "/app/lib/ruby/gems/2.2.0"
+        },
+        "build-args": [
+            /* We need several pip packages */
+            "--share=network"
+        ]
     },
     "cleanup": ["/include", "/lib/pkgconfig",
                 "/share/pkgconfig", "/share/aclocal",
@@ -33,6 +38,10 @@
               {
                   "type": "git",
                   "url": "https://github.com/samdroid-apps/something-for-reddit"
+              },
+              {
+                  "type": "patch",
+                  "path": "0001-Run-pip-install-in-autogen.sh.patch"
               }
           ]
       }

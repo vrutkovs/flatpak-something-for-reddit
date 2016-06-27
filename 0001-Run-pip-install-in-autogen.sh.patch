@@ -1,0 +1,24 @@
+From 4f250fa14b60073016f4ab94f628f7ae02a4f28a Mon Sep 17 00:00:00 2001
+From: Vadim Rutkovsky <vrutkovs@redhat.com>
+Date: Tue, 28 Jun 2016 00:25:00 +0200
+Subject: [PATCH] Run pip install in autogen.sh
+
+---
+ autogen.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/autogen.sh b/autogen.sh
+index 2ced956..fdc45a6 100755
+--- a/autogen.sh
++++ b/autogen.sh
+@@ -20,7 +20,7 @@ which gnome-autogen.sh || {
+
+ (cd "$srcdir" ;
+ test -d m4 || mkdir m4/ ;
+-git submodule update --init --recursive ;
++pip install -t /app/lib/python3.4/site-packages -r requirements.txt; gem install -i /app/lib/ruby/gems/2.2.0 -n /app/bin sass
+ )
+ touch AUTHORS
+ . gnome-autogen.sh
+--
+2.5.5
