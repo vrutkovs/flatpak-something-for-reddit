@@ -1,0 +1,25 @@
+From c1e32eb4b08661188b4b32ab5ebcf94bc965d02d Mon Sep 17 00:00:00 2001
+From: Vadim Rutkovsky <vrutkovs@redhat.com>
+Date: Tue, 28 Jun 2016 02:13:15 +0200
+Subject: [PATCH] Use valid DBus name
+
+---
+ src/main.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/main.py b/src/main.py
+index 5506d6a..b466931 100644
+--- a/src/main.py
++++ b/src/main.py
+@@ -239,7 +239,7 @@ class Application(Gtk.Application):
+ 
+     def __init__(self):
+         Gtk.Application.__init__(self,
+-                                 application_id='today.sam.reddit-is-gtk')
++                                 application_id='today.sam.reddit_is_gtk')
+         self.connect('startup', self.__do_startup_cb)
+         GLib.set_application_name("Something For Reddit")
+         GLib.set_prgname("reddit-is-gtk")
+-- 
+2.5.5
+

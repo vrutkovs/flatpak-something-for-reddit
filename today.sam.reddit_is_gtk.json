@@ -1,5 +1,5 @@
 {
-    "app-id": "com.github.samdroid_apps.something_for_reddit",
+    "app-id": "today.sam.reddit_is_gtk",
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.20",
     "sdk": "org.gnome.Sdk",
@@ -45,6 +45,10 @@
               {
                   "type": "patch",
                   "path": "0001-Run-pip-install-in-autogen.sh.patch"
+              },
+              {
+                  "type": "patch",
+                  "path": "0002-Use-valid-DBus-name.patch"
               }
           ]
       }
